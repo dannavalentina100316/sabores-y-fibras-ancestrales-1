@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Sabores y Fibras Ancestrales | Tradición que se teje con amor</title>
+  <!-- Google Fonts + Font Awesome (íconos limpios) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FEFAF5;
+      color: #2E241F;
+      line-height: 1.4;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, .logo, .nav-links a, .hero-title, .section-title, .quote {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #FFFFFFE6;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 14px 0;
+      border-bottom: 1px solid #F0E2D4;
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: #6B3E26;
+    }
+    .logo p {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      color: #A6724C;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #3A2A22;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+    .nav-links a:hover {
+      color: #B45F2B;
+      border-bottom-color: #D9A26C;
+    }
+    .btn-whatsapp-nav {
+      background: #25D36620;
+      padding: 8px 18px;
+      border-radius: 60px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #075E54;
+    }
+    .btn-whatsapp-nav i {
+      font-size: 1.1rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(107deg, #F9EADB 0%, #FCF3EA 100%);
+      padding: 60px 0 70px;
+      border-bottom: 1px solid #F0E0D0;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      color: #B45F2B;
+      font-weight: 600;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #4A2C1A;
+      margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #4C3A2E;
+      margin-bottom: 32px;
+      max-width: 90%;
+    }
+    .btn-wa {
+      background-color: #25D366;
+      color: #1E3A2F;
+      padding: 12px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: 0.2s;
+      box-shadow: 0 6px 14px rgba(37,211,102,0.2);
+    }
+    .btn-wa:hover {
+      background-color: #20b859;
+      transform: translateY(-2px);
+    }
+    .hero-info {
+      margin-top: 24px;
+      display: flex;
+      gap: 28px;
+      font-size: 0.9rem;
+      color: #7A5A44;
+    }
+    .hero-info i {
+      margin-right: 6px;
+      color: #C27E4A;
+    }
+    .hero-image {
+      flex: 0.8;
+      background: #E7D6C8;
+      border-radius: 48px 48px 48px 24px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+    }
+    .hero-image i {
+      font-size: 8rem;
+      color: #C1885E;
+    }
+    .hero-image p {
+      font-style: italic;
+      margin-top: 12px;
+      color: #6A4D36;
+    }
+
+    /* sección genérica */
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid #F3E5D8;
+    }
+    .section-alt {
+      background-color: #FCF6F0;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #5C3822;
+      position: relative;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: #8A6A50;
+      margin-bottom: 48px;
+      max-width: 700px;
+    }
+    .grid-2cols {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      margin-bottom: 28px;
+      color: #3A2A20;
+    }
+    .about-highlight {
+      background: #FFF1E6;
+      padding: 18px 24px;
+      border-radius: 24px;
+      border-left: 6px solid #D9A26C;
+    }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #C38354;
+      color: #C38354;
+      padding: 10px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: #C38354;
+      color: white;
+    }
+    .about-img {
+      flex: 0.9;
+      background: #EADBCE;
+      border-radius: 48px;
+      padding: 36px 20px;
+      text-align: center;
+    }
+    .about-img i {
+      font-size: 5rem;
+      color: #AD7350;
+    }
+
+    /* productos cards */
+    .productos-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .product-category {
+      flex: 1;
+      background: white;
+      border-radius: 36px;
+      padding: 32px 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #F2E4D8;
+      transition: all 0.2s;
+    }
+    .category-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border-left: 5px solid #D99E6B;
+      padding-left: 16px;
+    }
+    .product-item {
+      margin-bottom: 28px;
+    }
+    .product-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .product-name span:first-child i {
+      margin-right: 10px;
+      color: #D99258;
+      width: 24px;
+    }
+    .badge-count {
+      font-family: monospace;
+      background: #F6EDE4;
+      padding: 4px 10px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .product-desc {
+      color: #6C4F38;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      margin-left: 30px;
+    }
+    hr {
+      margin: 20px 0;
+      border-color: #EFE0D2;
+    }
+
+    /* galería */
+    .galeria-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .gal-card {
+      background: #FFF7F0;
+      border-radius: 32px;
+      padding: 24px 32px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 8px 12px rgba(0,0,0,0.03);
+      transition: all 0.2s;
+      border: 1px solid #F2E1D2;
+    }
+    .gal-card i {
+      font-size: 4rem;
+      color: #B47C54;
+      margin-bottom: 16px;
+    }
+    .gal-card p {
+      font-weight: 500;
+    }
+    .ver-mas {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* valores */
+    .valores-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+    }
+    .valor-item {
+      background: white;
+      border-radius: 32px;
+      padding: 32px 24px;
+      flex: 1 1 200px;
+      text-align: center;
+      transition: 0.2s;
+      border: 1px solid #F2E2D4;
+    }
+    .valor-icon {
+      font-size: 2.4rem;
+      color: #C78754;
+      margin-bottom: 20px;
+    }
+    .valor-item h4 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .valor-item p {
+      color: #5A4230;
+      font-size: 0.9rem;
+    }
+    .badge-valor {
+      margin-top: 16px;
+      display: inline-block;
+      background: #F1E5DA;
+      padding: 6px 12px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+    }
+
+    /* contacto */
+    .contacto-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      background: #FFFFFFD9;
+      border-radius: 48px;
+      padding: 40px 36px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+    }
+    .contact-left {
+      flex: 1;
+    }
+    .contact-left h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+    .contact-wa-block {
+      background: #EFF9F0;
+      border-radius: 32px;
+      padding: 20px;
+      margin: 28px 0;
+    }
+    .contact-number {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #2A6B47;
+    }
+    .ubicacion {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .btn-wa-large {
+      background: #25D366;
+      padding: 14px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #1F3C2C;
+      font-weight: bold;
+    }
+    .contact-right {
+      flex: 1;
+      background: #FCF3EA;
+      border-radius: 32px;
+      padding: 28px;
+    }
+    .contact-right i {
+      font-size: 3rem;
+      color: #C08153;
+    }
+
+    footer {
+      background: #302016;
+      color: #EADBCE;
+      padding: 40px 0 28px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #FFE3D0;
+      text-decoration: none;
+    }
+    @media (max-width: 800px) {
+      .hero-title { font-size: 2.2rem; }
+      .nav-links { gap: 16px; justify-content: center; }
+      .hero-grid { flex-direction: column; }
+      .section { padding: 50px 0; }
+      .section-title { font-size: 1.9rem; }
+      .grid-2cols { flex-direction: column; }
+      .productos-wrapper { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <h1>Sabores y Fibras</h1>
+      <p>Ancestrales · Raíces vivas</p>
+    </div>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Sobre nosotros</a>
+      <a href="#productos">Productos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#valores">Valores</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn-whatsapp-nav"><i class="fab fa-whatsapp"></i> Contáctanos</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO sección inicio -->
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-hands"></i> Hecho con esencia campesina</div>
+        <h1 class="hero-title">Tradición que se teje con amor</h1>
+        <p class="hero-desc">Artesanías en fique y sabores tradicionales hechos con nuestras propias manos.</p>
+        <a href="https://wa.me/573208660239?text=Hola%20Sabores%20y%20Fibras%20Ancestrales%2C%20quiero%20conocer%20sus%20productos" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp</a>
+        <div class="hero-info">
+          <span><i class="fas fa-map-marker-alt"></i> Vereda Túbuga, Mogotes, Santander, Colombia</span>
+          <span><i class="fas fa-clock"></i> Tradición viva</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <i class="fas fa-hands-sparkles"></i>
+        <p>Artesanías y arepas · alma campesina</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="section">
+    <div class="container grid-2cols">
+      <div class="about-text">
+        <h2 class="section-title">SOBRE NOSOTROS</h2>
+        <div class="about-highlight">
+          <p><strong>Nuestra historia, nuestras raíces</strong></p>
+        </div>
+        <p>Sabores y Fibras Ancestrales es un emprendimiento familiar de la Vereda Túbuga, Mogotes, Santander. Nace del amor por nuestras tradiciones, del trabajo honesto del campo y del deseo de mantener vivas nuestras raíces ancestrales. Cada producto que elaboramos, desde una bolsita en fique hasta una arepa con chicharrón, lleva nuestra historia, nuestra cultura y el orgullo de ser campesinos.</p>
+        <a href="#contacto" class="btn-outline"><i class="fab fa-whatsapp"></i> Conoce más de nosotros</a>
+      </div>
+      <div class="about-img">
+        <i class="fas fa-seedling"></i>
+        <i class="fas fa-tree" style="margin-left: 20px;"></i>
+        <p style="margin-top: 12px;">🌾 Manos que tejen y cocinan con legado</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">NUESTROS PRODUCTOS</h2>
+      <p class="section-sub">Hecho a mano, hecho con amor — Cada pieza es única.</p>
+      <div class="productos-wrapper">
+        <!-- Artesanías en fique -->
+        <div class="product-category">
+          <div class="category-title"><i class="fas fa-bag-shopping"></i> Artesanías en fique</div>
+          <div class="product-item">
+            <div class="product-name">
+              <span><i class="fas fa-bag-shopping"></i> Bolsos ecológicos</span>
+              <span class="badge-count">— 3 —</span>
+            </div>
+            <div class="product-desc">Tejidos a mano con fique 100% natural.</div>
+          </div>
+          <div class="product-item">
+            <div class="product-name">
+              <span><i class="fas fa-pouch"></i> Bolsitas</span>
+              <span class="badge-count">— 3 —</span>
+            </div>
+            <div class="product-desc">Diseños únicos que reflejan nuestra cultura.</div>
+          </div>
+          <div class="product-item">
+            <div class="product-name">
+              <span><i class="fas fa-keychain"></i> Llaveros</span>
+              <span class="badge-count">— 3 —</span>
+            </div>
+            <div class="product-desc">Pequeños detalles, grandes tradiciones.</div>
+          </div>
+        </div>
+        <!-- Arepas tradicionales -->
+        <div class="product-category">
+          <div class="category-title"><i class="fas fa-utensils"></i> Arepas tradicionales</div>
+          <div class="product-item">
+            <div class="product-name">
+              <span><i class="fas fa-corn"></i> Arepas de maíz pelado con chicharrón</span>
+              <span class="badge-count">— 3 —</span>
+            </div>
+            <div class="product-desc">Receta tradicional, sabor que nos representa.</div>
+          </div>
+          <hr>
+          <div class="product-desc" style="font-style:italic; margin-top:12px;">✨ Próximamente más sabores: arepa de chócolo, almojábanas artesanales.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA (preview visual) -->
+  <section id="galeria" class="section">
+    <div class="container">
+      <h2 class="section-title">GALERÍA</h2>
+      <p class="section-sub">Momentos de nuestro taller y productos que enamoran.</p>
+      <div class="galeria-grid">
+        <div class="gal-card"><i class="fas fa-hand-sparkles"></i><p>Tejiendo fique</p></div>
+        <div class="gal-card"><i class="fas fa-bread-slice"></i><p>Arepas recién hechas</p></div>
+        <div class="gal-card"><i class="fas fa-basket-shopping"></i><p>Bolsos únicos</p></div>
+        <div class="gal-card"><i class="fas fa-mountain"></i><p>Paisaje Túbuga</p></div>
+      </div>
+      <div class="ver-mas">
+        <a href="https://wa.me/573208660239?text=Hola%2C%20me%20encantaría%20ver%20más%20fotos%20de%20sus%20productos" class="btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> Ver más fotos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section id="valores" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">NUESTROS VALORES</h2>
+      <div class="valores-grid">
+        <div class="valor-item"><div class="valor-icon"><i class="fas fa-hands"></i></div><h4>Hecho a mano</h4><p>Cada pieza es elaborada con dedicación y cariño.</p><span class="badge-valor">— 3 —</span></div>
+        <div class="valor-item"><div class="valor-icon"><i class="fas fa-leaf"></i></div><h4>Tradición</h4><p>Rescatamos y preservamos nuestras costumbres.</p><span class="badge-valor">— 3 —</span></div>
+        <div class="valor-item"><div class="valor-icon"><i class="fas fa-globe-americas"></i></div><h4>Sostenibilidad</h4><p>Usamos materiales naturales que cuidan nuestro planeta.</p><span class="badge-valor">— 3 —</span></div>
+        <div class="valor-item"><div class="valor-icon"><i class="fas fa-hand-holding-heart"></i></div><h4>Producto local</h4><p>Apoyamos lo nuestro, fortalecemos nuestra comunidad.</p><span class="badge-valor">— 3 —</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="contacto-flex">
+        <div class="contact-left">
+          <h3><i class="fas fa-paper-plane"></i> Escríbenos y te contamos más</h3>
+          <p style="margin-bottom: 16px; font-size:1.05rem;">Estamos para atenderte con gusto y llevar lo mejor de nuestra tierra hasta ti.</p>
+          <div class="contact-wa-block">
+            <i class="fab fa-whatsapp" style="font-size:1.6rem; color:#25D366;"></i>
+            <span class="contact-number">320 866 0239</span>
+            <div style="margin-top: 10px;">
+              <a href="https://wa.me/573208660239?text=Hola%20equipo%20de%20Sabores%20y%20Fibras%2C%20quiero%20hacer%20un%20pedido" target="_blank" class="btn-wa-large"><i class="fab fa-whatsapp"></i> Conversar por WhatsApp</a>
+            </div>
+          </div>
+          <div class="ubicacion">
+            <i class="fas fa-map-pin fa-2x" style="color:#C2824B;"></i>
+            <div><strong>📍 Ubicación</strong><br>Vereda Túbuga, Mogotes, Santander, Colombia</div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <i class="fas fa-phone-alt"></i>
+          <i class="fas fa-envelope" style="margin-left: 16px;"></i>
+          <p style="margin-top: 20px;"><strong>Atención directa:</strong> WhatsApp 320 866 0239<br>Visítanos en la vereda Túbuga, te compartimos nuestras tradiciones y productos frescos.</p>
+          <div style="margin-top: 28px;">
+            <i class="fas fa-star-of-life"></i>  Envíos a todo el país (acuerdos con transportadoras)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#productos">Productos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#valores">Valores</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div style="margin: 16px 0;">
+      <i class="fab fa-whatsapp"></i> +57 320 866 0239 · Vereda Túbuga, Mogotes Santander, Colombia
+    </div>
+    <p>© 2025 Sabores y Fibras Ancestrales. Todos los derechos reservados.</p>
+    <p style="font-size:0.8rem; margin-top:12px;">Tejido con amor y tradición campesina 🌽🧶</p>
+  </div>
+</footer>
+
+<!-- pequeño scroll behavior nativo -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || targetId === "") return;
+      const targetElem = document.querySelector(targetId);
+      if(targetElem) {
+        e.preventDefault();
+        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
